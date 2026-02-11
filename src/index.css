@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+}
+
+::selection {
+  background: rgba(255, 0, 90, 0.35);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.22) rgba(255, 255, 255, 0.06);
+}
+
+*::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, "Segoe UI", Inter, Roboto, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #09090b;
+  color: white;
+}
+
+/* Aurora animation */
+@keyframes auroraShift {
+  0% {
+    transform: translate3d(-8%, -6%, 0) scale(1.02);
+  }
+  50% {
+    transform: translate3d(8%, 6%, 0) scale(1.06);
+  }
+  100% {
+    transform: translate3d(-8%, -6%, 0) scale(1.02);
+  }
+}
+
+.aurora {
+  position: absolute;
+  inset: -30%;
+  opacity: 0.55;
+  filter: blur(40px) saturate(1.15);
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255, 0, 90, 0.28), transparent 55%),
+    radial-gradient(circle at 78% 78%, rgba(120, 80, 255, 0.22), transparent 52%),
+    radial-gradient(circle at 70% 22%, rgba(255, 140, 0, 0.12), transparent 52%);
+  animation: auroraShift 14s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Grain texture */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.1;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+}
+
+/* Grid background */
+.bg-grid {
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Neon border effect */
+.neon-border {
+  box-shadow:
+    0 0 0 1px rgba(255, 0, 90, 0.25),
+    0 0 22px rgba(255, 0, 90, 0.18),
+    inset 0 0 20px rgba(255, 0, 90, 0.08);
+}
+
+/* Focus ring */
+.focus-ring:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 0, 90, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.18) inset;
+}
