@@ -1,67 +1,35 @@
-import SectionTitle from '../ui/SectionTitle'
+import { useState } from 'react'
 import StreamerCard from '../ui/StreamerCard'
-
-const streamers = [
-  {
-    name: 'Streamer1',
-    role: 'Variety Streamer',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
-    twitch: 'https://twitch.tv',
-    youtube: 'https://youtube.com',
-    twitter: 'https://twitter.com',
-  },
-  {
-    name: 'Streamer2',
-    role: 'MMO Specialist',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80',
-    twitch: 'https://twitch.tv',
-    youtube: 'https://youtube.com',
-  },
-  {
-    name: 'Streamer3',
-    role: 'PvP Master',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80',
-    twitch: 'https://twitch.tv',
-    twitter: 'https://twitter.com',
-  },
-  {
-    name: 'Streamer4',
-    role: 'Content Creator',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80',
-    twitch: 'https://twitch.tv',
-    youtube: 'https://youtube.com',
-    twitter: 'https://twitter.com',
-  },
-  {
-    name: 'Streamer5',
-    role: 'Raid Leader',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80',
-    twitch: 'https://twitch.tv',
-  },
-]
+import StreamerModal from '../ui/StreamerModal'
+import STREAMERS from '../../data/streamersData'
 
 export default function Streamers() {
+  const [selectedStreamer, setSelectedStreamer] = useState(null)
+
   return (
     <section id="streamers" className="py-20 relative">
       {/* Background glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,0,90,0.08),transparent_50%)]" />
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
-        <SectionTitle subtitle="Conheça os streamers que fazem parte da nossa comunidade">
-          Nossos <span className="text-rose-500">Streamers</span>
-        </SectionTitle>
+        {/* Cabeçalho alinhado à esquerda */}
+        <p className="text-sm font-medium text-white/60 uppercase tracking-wider mb-1">
+          Streamers
+        </p>
+        <h2 className="text-3xl md:text-4xl font-semibold text-white mb-3">
+          Streamers da Side
+        </h2>
+        <p className="text-white/60 text-base max-w-2xl mb-10">
+          Esses são os nossos streamer, sempre com novidades, resenha e muito gameplay. Escolha um e clique no card para acessar o perfil.
+        </p>
 
-        {/* Streamers grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
-          {streamers.map((streamer) => (
+        {/* Grid de cards - 3 colunas no desktop como no print */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          {STREAMERS.map((streamer) => (
             <StreamerCard
-              key={streamer.name}
-              name={streamer.name}
-              role={streamer.role}
-              image={streamer.image}
-              twitch={streamer.twitch}
-              youtube={streamer.youtube}
-              twitter={streamer.twitter}
+              key={streamer.id}
+              streamer={streamer}
+              onClick={() => setSelectedStreamer(streamer)}
             />
           ))}
         </div>
@@ -79,6 +47,13 @@ export default function Streamers() {
           </a>
         </div>
       </div>
+
+      {selectedStreamer && (
+        <StreamerModal
+          streamer={selectedStreamer}
+          onClose={() => setSelectedStreamer(null)}
+        />
+      )}
     </section>
   )
 }

@@ -18,7 +18,7 @@ const DiscordIcon = ({ size = 20, className }) => (
 )
 
 const navLinks = [
-  { label: 'Twitch Streams', href: '#streamers' },
+  { label: 'Streamers', href: '#streamers' },
   { label: 'Servidor', href: '#server' },
   { label: 'Recrutamento', href: '#recruitment' },
   { label: 'Wiki', href: '#wiki' },
