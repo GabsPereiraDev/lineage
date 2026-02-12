@@ -65,7 +65,7 @@ export default function Staff() {
     <section id="staff" className="py-20 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <SectionTitle subtitle="Conheça a equipe que mantém nossa comunidade funcionando">
-          Staff <span className="text-amber-400">Sentence</span>
+          Staff <span className="text-amber-400">WarTag</span>
         </SectionTitle>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">

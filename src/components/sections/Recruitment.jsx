@@ -25,7 +25,7 @@ export default function Recruitment() {
   const sendToWhatsApp = () => {
     const phone = "5500000000000" // TODO: Configurar número real
     const message = encodeURIComponent(
-      `*Novo Recrutamento - SentenceSide*\n\n` +
+      `*Novo Recrutamento - WarTagSide*\n\n` +
       `*Nome:* ${formData.nome}\n` +
       `*Discord:* ${formData.discord}\n` +
       `*Idade:* ${formData.idade}\n` +
@@ -178,7 +178,7 @@ export default function Recruitment() {
             {/* Mensagem */}
             <div className="md:col-span-2">
               <label className="block text-sm font-medium text-white/70 mb-2">
-                Por que quer fazer parte da Sentence?
+                Por que quer fazer parte da WarTag?
               </label>
               <textarea
                 name="mensagem"

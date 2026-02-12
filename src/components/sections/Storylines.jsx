@@ -5,7 +5,7 @@ const timeline = [
   {
     year: '2018',
     title: 'O Início',
-    description: 'A Sentence Side é fundada por um grupo de amigos apaixonados por MMOs.',
+    description: 'A WarTag Side é fundada por um grupo de amigos apaixonados por MMOs.',
     icon: Flag,
     color: 'rose',
   },

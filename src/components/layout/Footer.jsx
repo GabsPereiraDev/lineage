@@ -41,7 +41,7 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1">
             <a href="#" className="inline-block mb-4">
               <span className="text-xl font-semibold text-white">
-                Sentence<span className="text-rose-500">Side</span>
+                WarTag<span className="text-rose-500">Side</span>
               </span>
             </a>
             <p className="text-sm text-white/50 mb-4">
@@ -86,7 +86,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-white/40">
-            &copy; {new Date().getFullYear()} SentenceSide. Todos os direitos reservados.
+            &copy; {new Date().getFullYear()} WarTagSide. Todos os direitos reservados.
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-sm text-white/40 hover:text-white/60 transition-colors">

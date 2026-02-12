@@ -30,7 +30,7 @@ function App() {
         <About />
         <Staff />
         <Wiki />
-        <Storylines />
+       
         <Recruitment />
         <JoinUs />
       </main>

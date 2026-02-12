@@ -1,9 +1,16 @@
 import { MessageCircle, Users } from 'lucide-react'
 import Button from '../ui/Button'
+import banner from '../../assets/banner.png'
 
 export default function Hero() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Banner background */}
+      <div className="absolute inset-0">
+        <img src={banner} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-zinc-950/60" />
+      </div>
+
       {/* Aurora background */}
       <div className="aurora" />
 
@@ -22,7 +29,7 @@ export default function Hero() {
         <h1 className="text-4xl md:text-6xl font-semibold text-white mb-6 leading-tight">
           Entre na{' '}
           <span className="bg-gradient-to-r from-rose-500 via-pink-500 to-amber-400 bg-clip-text text-transparent">
-            Sentence
+            WarTag
           </span>
           {' '}e jogue com{' '}
           <span className="text-white/90">Brasileiros e Hispanos</span>

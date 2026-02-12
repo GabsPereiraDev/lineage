@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Menu, X, ArrowRight, Youtube, Facebook, Instagram, Twitch } from 'lucide-react'
 import Button from '../ui/Button'
-import sentenceWord from '../../assets/sentenceWord.png'
-import sentenceLogo from '../../assets/sentenceLogo.jpg'
+
+import logo from '../../assets/logo.png'
 
 const DiscordIcon = ({ size = 20, className }) => (
   <svg
@@ -37,12 +37,9 @@ export default function Navbar() {
             <a href="#" className="flex items-center gap-3 group">
               <div className="relative">
                 <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-rose-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
-                <img src={sentenceLogo} alt="Logo" className="relative h-12 w-12 rounded-xl object-cover shadow-2xl" />
+                <img src={logo} alt="Logo" className="relative  w-25 rounded-xl object-cover shadow-2xl" />
               </div>
-              <div className="flex flex-col">
-                <img src={sentenceWord} alt="SentenceSide" className="h-8 w-auto object-contain object-left mb-[-4px]" />
-                <span className="text-[10px] uppercase tracking-[0.2em] text-zinc-400 font-medium leading-none">Lineage 2 Side</span>
-              </div>
+            
             </a>
 
             {/* Desktop Nav */}

@@ -21,7 +21,7 @@ export default function JoinUs() {
         <h2 className="text-3xl md:text-5xl font-semibold text-white mb-6">
           Quer jogar na{' '}
           <span className="bg-gradient-to-r from-rose-500 to-amber-400 bg-clip-text text-transparent">
-            Sentence
+            WarTag
           </span>
           ?
         </h2>
