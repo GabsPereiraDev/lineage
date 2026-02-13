@@ -9,7 +9,7 @@ import Streamers from './components/sections/Streamers'
 import ServerSection from './components/sections/Server'
 import About from './components/sections/About'
 import Staff from './components/sections/Staff'
-import Wiki from './components/sections/Wiki'
+// import Wiki from './components/sections/Wiki'
 import Storylines from './components/sections/Storylines'
 import Recruitment from './components/sections/Recruitment'
 import JoinUs from './components/sections/JoinUs'
@@ -29,8 +29,7 @@ function App() {
         <FeaturedGame />
         <About />
         <Staff />
-        <Wiki />
-       
+        {/* <Wiki /> */}
         <Recruitment />
         <JoinUs />
       </main>

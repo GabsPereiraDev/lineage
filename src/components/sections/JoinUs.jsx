@@ -1,5 +1,4 @@
-import { MessageCircle, ArrowRight } from 'lucide-react'
-import Button from '../ui/Button'
+import { Headphones, ArrowRight } from 'lucide-react'
 
 export default function JoinUs() {
   return (
@@ -13,7 +12,7 @@ export default function JoinUs() {
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-500/10 border border-rose-500/20 mb-8">
-          <MessageCircle size={16} className="text-rose-400" />
+          <Headphones size={16} className="text-rose-400" />
           <span className="text-sm text-white/80">Vagas Abertas</span>
         </div>
 
@@ -29,16 +28,16 @@ export default function JoinUs() {
         {/* Description */}
         <p className="text-lg text-white/60 max-w-2xl mx-auto mb-10">
           Estamos sempre em busca de jogadores dedicados que compartilham
-          nossos valores. Entre em nosso Discord e faça parte da familia.
+          nossos valores. Entre no nosso TeamSpeak e faça parte da família.
         </p>
 
         {/* CTA */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button variant="primary" className="text-lg px-10 py-5">
-            <MessageCircle size={22} />
-            Entrar no Discord
+          <a href="#teamspeak" className="inline-flex items-center justify-center gap-2 text-lg px-10 py-5 rounded-full font-medium bg-rose-500/90 hover:bg-rose-500 text-white shadow-[0_0_25px_rgba(255,0,80,0.35)] transition-all duration-300">
+            <Headphones size={22} />
+            Entrar no TeamSpeak
             <ArrowRight size={18} />
-          </Button>
+          </a>
         </div>
 
         {/* Additional info */}

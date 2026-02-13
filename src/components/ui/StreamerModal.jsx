@@ -48,16 +48,6 @@ export default function StreamerModal({ streamer, onClose }) {
             className="absolute inset-0 bg-cover bg-center opacity-40"
             style={{ backgroundImage: `url(${streamer.logoImage})` }}
           />
-          <h2
-            id="modal-title"
-            className="relative flex items-center justify-center h-full text-4xl md:text-5xl font-bold"
-            style={{
-              color: '#a5b4fc',
-              textShadow: '0 0 15px rgba(99, 102, 241, 0.9), 0 0 30px rgba(139, 92, 246, 0.7), 0 0 45px rgba(59, 130, 246, 0.5)',
-            }}
-          >
-            {streamer.name}
-          </h2>
           <button
             type="button"
             onClick={onClose}
@@ -77,7 +67,7 @@ export default function StreamerModal({ streamer, onClose }) {
               className="w-16 h-16 rounded-full object-cover border-2 border-white/20 shrink-0"
             />
             <div>
-              <h3 className="text-xl font-semibold text-white">{streamer.name}</h3>
+              <h3 id="modal-title" className="text-xl font-semibold text-white">{streamer.name}</h3>
               <p className="text-sm text-white/60">{streamer.role}</p>
               {isLive && streamer.viewers != null && (
                 <p className="text-sm text-green-400 mt-1">
@@ -93,23 +83,6 @@ export default function StreamerModal({ streamer, onClose }) {
               História
             </h4>
             <p className="text-white/80 text-sm leading-relaxed">{streamer.story}</p>
-          </div>
-
-          {/* Fotos */}
-          <div>
-            <h4 className="text-sm font-semibold text-white/90 uppercase tracking-wider mb-2">
-              Fotos
-            </h4>
-            <div className="flex gap-2 flex-wrap">
-              {streamer.photos?.map((url, i) => (
-                <img
-                  key={i}
-                  src={url}
-                  alt={`Foto ${i + 1}`}
-                  className="w-20 h-20 rounded-lg object-cover border border-white/10"
-                />
-              ))}
-            </div>
           </div>
 
           {/* Canal na Twitch */}
@@ -140,23 +113,6 @@ export default function StreamerModal({ streamer, onClose }) {
             </div>
           </div>
 
-          {/* Clipes */}
-          <div>
-            <h4 className="text-sm font-semibold text-white/90 uppercase tracking-wider mb-2">
-              Clipes
-            </h4>
-            {streamer.clips?.length > 0 ? (
-              <ul className="space-y-2">
-                {streamer.clips.map((clip, i) => (
-                  <li key={i} className="text-white/70 text-sm">
-                    {typeof clip === 'string' ? clip : `Clipe ${i + 1}`}
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="text-white/50 text-sm">Nenhum clipe disponível.</p>
-            )}
-          </div>
         </div>
       </div>
     </div>

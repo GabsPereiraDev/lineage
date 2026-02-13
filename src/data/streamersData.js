@@ -1,171 +1,28 @@
-// Covers locais em src/assets (vídeo: play no hover, reset ao tirar o mouse)
-import cover0 from '../assets/cover.mp4'
-import cover1 from '../assets/cover (1).mp4'
-import cover2 from '../assets/cover (2).mp4'
-import cover3 from '../assets/cover (3).mp4'
-import cover4 from '../assets/cover (4).mp4'
-import cover5 from '../assets/cover (5).mp4'
-import cover6 from '../assets/cover (6).mp4'
-import cover7 from '../assets/cover (7).mp4'
-import cover8 from '../assets/cover (8).mp4'
+// Imagens dos streamers em src/assets (nome do streamer .jpeg)
+import METRALHA_img from '../assets/METRALHA.jpeg'
+import COLTAO_img from '../assets/COLTAO.jpeg'
+import ALOSERGAMER_img from '../assets/ALOSERGAMER.jpeg'
+import LEN_img from '../assets/LEN.jpeg'
+import ZORO_img from '../assets/ZORO.jpeg'
+import LIONEL_img from '../assets/LIONEL.jpeg'
+import PURODIO_img from '../assets/PURODIO.jpeg'
+import SPWNZZ_img from '../assets/SPWNZZ.jpeg'
+import UJOW_img from '../assets/UJOW.jpeg'
+import KAHTERTO_img from '../assets/KAHTERTO.jpeg'
+import CRIDI_img from '../assets/CRIDI.jpeg'
 
-const COVERS = [cover0, cover1, cover2, cover3, cover4, cover5, cover6, cover7, cover8]
-
-// 9 perfis para a seção Streamers (1 cover por streamer)
 const STREAMERS = [
-  {
-    id: '1',
-    name: 'Wilsinho',
-    role: 'Streamer • PvP & Siege e lider da side',
-    status: 'offline',
-    viewers: null,
-    cover: COVERS[0],
-    bio: 'Líder da side e referência em PvP. Sempre no front das batalhas e nas estratégias de siege.',
-    story: 'Wilsinho é streamer de Lineage 2 há mais de 4 anos. Comanda a side nas guerras e sieges, e mantém a galera unida. Classe preferida: Gladiator.',
-    twitchChannel: 'WilsinhoL2',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80',
-    logoImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80',
-    photos: ['https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80'],
-    clips: [],
-    photosCount: 1,
-    clipsCount: 0,
-  },
-  {
-    id: '2',
-    name: 'Anico',
-    role: 'Streamer • Farm, PvP & Rotina',
-    status: 'offline',
-    viewers: null,
-    cover: COVERS[1],
-    bio: 'Social media da side. Farm, PvP e rotina no servidor com muita interação.',
-    story: 'Anico é streamer de Lineage 2 há 3 anos. Além disso, Anico é nosso social media. Classe preferida: Mago.',
-    twitchChannel: 'AnicoBR',
-    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80',
-    logoImage: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80',
-    photos: ['https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80'],
-    clips: [],
-    photosCount: 1,
-    clipsCount: 2,
-  },
-  {
-    id: '3',
-    name: 'WaterxD',
-    role: 'Streamer • Hardcore PvP',
-    status: 'offline',
-    viewers: null,
-    cover: COVERS[2],
-    bio: 'Experiente e adaptável. Foco total em PvP e mecânicas do jogo.',
-    story: 'WaterxD joga Lineage 2 há 5 anos. Especialista em Hardcore PvP, conhecido por plays decisivas. Classe preferida: Archer.',
-    twitchChannel: 'WaterxD',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80',
-    logoImage: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80',
-    photos: ['https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80'],
-    clips: [],
-    photosCount: 2,
-    clipsCount: 1,
-  },
-  {
-    id: '4',
-    name: 'SNK',
-    role: 'Streamer • Hardcore PvP',
-    status: 'live',
-    viewers: 13,
-    cover: COVERS[3],
-    bio: 'Experiente em PvP e War. Magos e Archers são suas classes favoritas.',
-    story: 'SNK é streamer de Lineage 2 há 2 anos. Focado em PvP de alto nível e participação em wars. Classes preferidas: Magos e Archers.',
-    twitchChannel: 'snakegamer083',
-    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80',
-    logoImage: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&q=80',
-    photos: ['https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80'],
-    clips: [],
-    photosCount: 1,
-    clipsCount: 0,
-  },
-  {
-    id: '5',
-    name: 'ChutaStreamer',
-    role: 'Streamer • Hardcore PvP',
-    status: 'offline',
-    viewers: null,
-    cover: COVERS[4],
-    bio: 'Anos de experiência em PvP. Resenha e gameplay de qualidade.',
-    story: 'ChutaStreamer transmite Lineage 2 há 6 anos. Um dos mais experientes da side em PvP. Classe preferida: Dark Avenger.',
-    twitchChannel: 'ChutaStreamer',
-    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80',
-    logoImage: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&q=80',
-    photos: ['https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80'],
-    clips: [],
-    photosCount: 3,
-    clipsCount: 2,
-  },
-  {
-    id: '6',
-    name: 'Ilopinlol',
-    role: 'Streamer • Hardcore PvP',
-    status: 'offline',
-    viewers: null,
-    cover: COVERS[5],
-    bio: 'Muita interação e carisma. Hardcore PvP com resenha garantida.',
-    story: 'Ilopinlol é streamer de Lineage 2 há 2 anos. Conhecido pela interação com o chat e plays de PvP. Classe preferida: Spellhowler.',
-    twitchChannel: 'Ilopinlol',
-    avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&q=80',
-    logoImage: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&q=80',
-    photos: ['https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&q=80'],
-    clips: [],
-    photosCount: 1,
-    clipsCount: 1,
-  },
-  {
-    id: '7',
-    name: 'BixoSolto',
-    role: 'Streamer • Hardcore PvP',
-    status: 'offline',
-    viewers: null,
-    cover: COVERS[6],
-    bio: 'PvP intenso e resenha. Sempre no combate e na interação com a galera.',
-    story: 'BixoSolto transmite Lineage 2 há 3 anos. Focado em Hardcore PvP e conteúdo divertido. Classe preferida: Tyrant.',
-    twitchChannel: 'BixoSolto',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80',
-    logoImage: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80',
-    photos: ['https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80'],
-    clips: [],
-    photosCount: 1,
-    clipsCount: 0,
-  },
-  {
-    id: '8',
-    name: 'Makalister',
-    role: 'Streamer • Hardcore PvP',
-    status: 'offline',
-    viewers: null,
-    cover: COVERS[7],
-    bio: 'Resenha e muito gameplay. PvP e siege no dia a dia.',
-    story: 'Makalister é streamer de Lineage 2 há 2 anos. Conhecido pela resenha e pelo PvP. Classe preferida: Destroyer.',
-    twitchChannel: 'Makalister',
-    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80',
-    logoImage: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&q=80',
-    photos: ['https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80'],
-    clips: [],
-    photosCount: 2,
-    clipsCount: 1,
-  },
-  {
-    id: '9',
-    name: 'King',
-    role: 'Streamer • Hardcore PvP',
-    status: 'offline',
-    viewers: null,
-    cover: COVERS[8],
-    bio: 'Resenha e muito mais. PvP e conteúdo variado no servidor.',
-    story: 'King transmite Lineage 2 há 4 anos. Um dos nomes da side em PvP e siege. Classe preferida: Warlord.',
-    twitchChannel: 'KingL2',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80',
-    logoImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80',
-    photos: ['https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80'],
-    clips: [],
-    photosCount: 1,
-    clipsCount: 2,
-  },
+  { id: '1', name: 'METRALHA', role: 'Streamer', status: 'offline', viewers: null, image: METRALHA_img, bio: '', story: 'Streamer da WarTag.', twitchChannel: 'marciometralha', avatar: METRALHA_img, logoImage: METRALHA_img, photos: [], clips: [] },
+  { id: '2', name: 'COLTAO', role: 'Streamer', status: 'offline', viewers: null, image: COLTAO_img, bio: '', story: 'Streamer da WarTag.', twitchChannel: 'thecoltee', avatar: COLTAO_img, logoImage: COLTAO_img, photos: [], clips: [] },
+  { id: '3', name: 'ALOSERGAMER', role: 'Streamer', status: 'offline', viewers: null, image: ALOSERGAMER_img, bio: '', story: 'Streamer da WarTag.', twitchChannel: 'aloserl2', avatar: ALOSERGAMER_img, logoImage: ALOSERGAMER_img, photos: [], clips: [] },
+  { id: '4', name: 'LEN', role: 'Streamer', status: 'offline', viewers: null, image: LEN_img, bio: '', story: 'Streamer da WarTag.', twitchChannel: 'tvllenn', avatar: LEN_img, logoImage: LEN_img, photos: [], clips: [] },
+  { id: '5', name: 'ZORO', role: 'Streamer', status: 'offline', viewers: null, image: ZORO_img, bio: '', story: 'Streamer da WarTag.', twitchChannel: 'zoroonft', avatar: ZORO_img, logoImage: ZORO_img, photos: [], clips: [] },
+  { id: '6', name: 'LIONEL', role: 'Streamer', status: 'offline', viewers: null, image: LIONEL_img, bio: '', story: 'Streamer da WarTag.', twitchChannel: 'lionelnft', avatar: LIONEL_img, logoImage: LIONEL_img, photos: [], clips: [] },
+  { id: '7', name: 'PURODIO', role: 'Streamer', status: 'offline', viewers: null, image: PURODIO_img, bio: '', story: 'Streamer da WarTag.', twitchChannel: 'purodiol2', avatar: PURODIO_img, logoImage: PURODIO_img, photos: [], clips: [] },
+  { id: '8', name: 'SPWNZZ', role: 'Streamer', status: 'offline', viewers: null, image: SPWNZZ_img, bio: '', story: 'Streamer da WarTag.', twitchChannel: 'spwnzz1', avatar: SPWNZZ_img, logoImage: SPWNZZ_img, photos: [], clips: [] },
+  { id: '9', name: 'UJOW', role: 'Streamer', status: 'offline', viewers: null, image: UJOW_img, bio: '', story: 'Streamer da WarTag.', twitchChannel: 'ujowofc', avatar: UJOW_img, logoImage: UJOW_img, photos: [], clips: [] },
+  { id: '10', name: 'KAHTERTO', role: 'Streamer', status: 'offline', viewers: null, image: KAHTERTO_img, bio: '', story: 'Streamer da WarTag.', twitchChannel: 'kahterto', avatar: KAHTERTO_img, logoImage: KAHTERTO_img, photos: [], clips: [] },
+  { id: '11', name: 'CRIDI', role: 'Streamer', status: 'offline', viewers: null, image: CRIDI_img, bio: '', story: 'Streamer da WarTag.', twitchChannel: 'criidtv', avatar: CRIDI_img, logoImage: CRIDI_img, photos: [], clips: [] },
 ]
 
 export default STREAMERS

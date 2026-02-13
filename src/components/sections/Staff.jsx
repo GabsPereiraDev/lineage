@@ -1,42 +1,10 @@
 import SectionTitle from '../ui/SectionTitle'
-import { Crown, Shield, Wrench } from 'lucide-react'
+import { Crown, Shield } from 'lucide-react'
 
 const staffMembers = [
-  {
-    name: 'Admin1',
-    role: 'Fundador',
-    icon: Crown,
-    color: 'amber',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80',
-  },
-  {
-    name: 'Admin2',
-    role: 'Co-Fundador',
-    icon: Crown,
-    color: 'amber',
-    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80',
-  },
-  {
-    name: 'Mod1',
-    role: 'Moderador',
-    icon: Shield,
-    color: 'violet',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
-  },
-  {
-    name: 'Mod2',
-    role: 'Moderador',
-    icon: Shield,
-    color: 'violet',
-    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80',
-  },
-  {
-    name: 'Support1',
-    role: 'Suporte',
-    icon: Wrench,
-    color: 'emerald',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80',
-  },
+  { name: 'Gregin', role: 'Fundador', icon: Crown, color: 'amber', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80' },
+  { name: 'LLENN', role: 'Co-Fundador', icon: Crown, color: 'amber', image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80' },
+  { name: 'TheColte', role: 'Moderador', icon: Shield, color: 'violet', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80' },
 ]
 
 const colorClasses = {
@@ -68,7 +36,7 @@ export default function Staff() {
           Staff <span className="text-amber-400">WarTag</span>
         </SectionTitle>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
           {staffMembers.map((member) => {
             const colors = colorClasses[member.color]
             return (

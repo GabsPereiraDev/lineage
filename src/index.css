@@ -95,6 +95,20 @@ body {
     inset 0 0 20px rgba(255, 0, 90, 0.08);
 }
 
+/* Seta "Ver perfil" mexendo no hover do card */
+@keyframes arrowWiggle {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+}
+
+.group:hover .arrow-wiggle {
+  animation: arrowWiggle 0.6s ease-in-out infinite;
+}
+
 /* Focus ring */
 .focus-ring:focus-visible {
   outline: none;

@@ -1,10 +1,8 @@
-import { Twitter, Instagram, Youtube, MessageCircle } from 'lucide-react'
+import { Instagram, Youtube } from 'lucide-react'
 
 const socialLinks = [
-  { icon: MessageCircle, href: '#', label: 'Discord' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Youtube, href: '#', label: 'YouTube' },
+  { icon: Instagram, href: 'https://instagram.com/clanwartag', label: 'Instagram' },
+  { icon: Youtube, href: 'https://youtube.com/@wartagclan', label: 'YouTube' },
 ]
 
 const footerLinks = [
@@ -52,6 +50,8 @@ export default function Footer() {
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"
                   aria-label={social.label}
                 >

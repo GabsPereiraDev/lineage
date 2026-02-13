@@ -1,13 +1,19 @@
-import { MessageCircle, Users } from 'lucide-react'
+import { Headphones, Users } from 'lucide-react'
 import Button from '../ui/Button'
 import banner from '../../assets/banner.png'
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Banner background */}
-      <div className="absolute inset-0">
-        <img src={banner} alt="" className="w-full h-full object-cover" />
+    <section id="hero" className="relative min-h-screen min-h-[100dvh] flex items-center justify-center overflow-hidden">
+      {/* Banner background - responsivo: preenche e ajusta à viewport */}
+      <div className="absolute inset-0 min-w-0 min-h-0">
+        <img
+          src={banner}
+          alt=""
+          className="absolute inset-0 w-full h-full min-w-full min-h-full object-cover object-center"
+          loading="eager"
+          fetchPriority="high"
+        />
         <div className="absolute inset-0 bg-zinc-950/60" />
       </div>
 
@@ -43,10 +49,10 @@ export default function Hero() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button variant="primary" className="text-base px-8 py-4">
-            <MessageCircle size={20} />
-            Entrar no Discord
-          </Button>
+          <a href="#teamspeak" className="inline-flex items-center justify-center gap-2 text-base px-8 py-4 rounded-full font-medium bg-rose-500/90 hover:bg-rose-500 text-white shadow-[0_0_25px_rgba(255,0,80,0.35)] transition-all duration-300">
+            <Headphones size={20} />
+            Entrar no TeamSpeak
+          </a>
           <Button variant="secondary" className="text-base px-8 py-4">
             <Users size={20} />
             Conhecer a Comunidade
