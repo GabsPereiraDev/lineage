@@ -4,7 +4,7 @@ import { Menu, X, ArrowRight, Youtube, Instagram } from 'lucide-react'
 import logo from '../../assets/logo.png'
 
 const JOGAR_NA_SIDE_MSG = 'Olá! Estou interessado em jogar na side e gostaria de mais informações. Pode me ajudar?'
-const WHATSAPP_URL = `https://wa.me/5516997425812?text=${encodeURIComponent(JOGAR_NA_SIDE_MSG)}`
+const WHATSAPP_URL = `https://wa.me/554498394883?text=${encodeURIComponent(JOGAR_NA_SIDE_MSG)}`
 
 const navLinks = [
   { label: 'Streamers', href: '#streamers' },

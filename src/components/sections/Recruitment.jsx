@@ -29,7 +29,7 @@ export default function Recruitment() {
   }
 
   const sendToWhatsApp = () => {
-    const phone = '5516997425812'
+    const phone = '554498394883'
     const message =
       `*Nova Candidatura - WarTag*\n\n` +
       `Nome/Nickname: ${formData.nome}\n` +

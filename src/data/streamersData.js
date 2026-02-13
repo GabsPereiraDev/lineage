@@ -1,13 +1,13 @@
 // Imagens dos streamers em src/assets (nome do streamer .jpeg)
 import METRALHA_img from '../assets/METRALHA.jpeg'
 import COLTAO_img from '../assets/COLTAO.jpeg'
-import ALOSERGAMER_img from '../assets/ALOSERGAMER.jpeg'
+import ALOSERGAMER_img from '../assets/ALOSER.jpeg'
 import LEN_img from '../assets/LEN.jpeg'
 import ZORO_img from '../assets/ZORO.jpeg'
 import LIONEL_img from '../assets/LIONEL.jpeg'
 import PURODIO_img from '../assets/PURODIO.jpeg'
 import SPWNZZ_img from '../assets/SPWNZZ.jpeg'
-import UJOW_img from '../assets/UJOW.jpeg'
+import UJOW_img from '../assets/UJOW.png'
 import KAHTERTO_img from '../assets/KAHTERTO.jpeg'
 import CRIDI_img from '../assets/CRIDI.jpeg'
 

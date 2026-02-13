@@ -1,41 +1,13 @@
 import { useState, useEffect } from 'react'
-import { Swords, Target, Zap } from 'lucide-react'
+import { Swords, Target, Zap, Loader2 } from 'lucide-react'
 import SectionTitle from '../ui/SectionTitle'
 import samuraiVideo from '../../assets/samuraicrow.mp4'
 import zgamingLogo from '../../assets/zgamming_clean.png'
-
-
-const classesList = [
-  { name: 'DD', count: 3 },
-  { name: 'Sps', count: 2 },
-  { name: 'Gk', count: 2 },
-  { name: 'Acher', count: 1 },
-  { name: 'duvida ainda', count: 1 },
-  { name: 'Sagitarius', count: 1 },
-  { name: 'Healer', count: 1 },
-  { name: 'storm', count: 1 },
-  { name: 'Mago / Archer', count: 1 },
-  { name: 'Tanker', count: 1 },
-  { name: 'Suporte', count: 1 },
-  { name: 'DK', count: 1 },
-  { name: 'SE EE', count: 1 },
-  { name: 'Tanker Elf', count: 1 },
-  { name: 'Espelsinger', count: 1 },
-  { name: 'Soutaker', count: 1 },
-  { name: 'Tank/bs', count: 1 },
-  { name: 'Necro', count: 1 },
-  { name: 'Blade Dancer', count: 1 },
-  { name: 'Shilen Templar', count: 1 },
-  { name: 'Warlord', count: 1 },
-  { name: 'Arkero', count: 1 },
-  { name: 'SE', count: 1 },
-  { name: 'SS', count: 1 },
-  { name: 'TITAN', count: 1 },
-  { name: 'HEAL', count: 1 },
-  { name: 'WL', count: 1 },
-]
+import { useSheetsData } from '../../context/SheetsContext'
 
 export default function ServerSection() {
+  const { classCounts, members, loading } = useSheetsData()
+
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -65,6 +37,15 @@ export default function ServerSection() {
 
     return () => clearInterval(interval)
   }, [])
+
+  // Converte classCounts em lista ordenada
+  const classesList = Object.entries(classCounts)
+    .map(([name, count]) => ({ name, count }))
+    .sort((a, b) => b.count - a.count)
+
+  const totalMembers = members.length
+  const maxCount = classesList.length > 0 ? classesList[0].count : 1
+
   return (
     <section id="server" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -134,55 +115,46 @@ export default function ServerSection() {
                 <div className="bg-[#09090bb3] backdrop-blur-md border border-white/10 rounded-[20px] px-4 pt-4 pb-2 shadow-lg flex flex-col justify-center">
                   <div className="flex items-center gap-2 mb-1">
                     <Swords size={14} className="text-rose-500" />
-                    <span className="text-[11px] text-zinc-400">DD Melee</span>
+                    <span className="text-[11px] text-zinc-400">Total Membros</span>
                   </div>
-                  <div className="text-xl font-bold text-white">23</div>
+                  <div className="text-xl font-bold text-white">{loading ? '...' : totalMembers}</div>
                 </div>
                 <div className="bg-[#09090bb3] backdrop-blur-md border border-white/10 rounded-[20px] px-4 pt-4 pb-2 shadow-lg flex flex-col justify-center">
                   <div className="flex items-center gap-2 mb-1">
                     <Target size={14} className="text-rose-500" />
-                    <span className="text-[11px] text-zinc-400">Total Range</span>
+                    <span className="text-[11px] text-zinc-400">Classes Únicas</span>
                   </div>
-                  <div className="text-xl font-bold text-white">25</div>
+                  <div className="text-xl font-bold text-white">{loading ? '...' : classesList.length}</div>
                 </div>
               </div>
 
-              {/* Tipos Breakdown */}
+              {/* Tipos Breakdown - Top 4 classes */}
               <div className="bg-[#09090bb3] backdrop-blur-md border border-white/10 rounded-[20px] px-5 pt-5 pb-3 shadow-lg flex-1">
                 <div className="flex items-center gap-2 mb-3">
                   <Zap size={14} className="text-rose-500" />
-                  <span className="text-xs font-medium text-zinc-300">Tipos</span>
+                  <span className="text-xs font-medium text-zinc-300">Top Classes</span>
                 </div>
-                <div className="space-y-2">
-                  <div className="relative bg-white/5 rounded-lg border border-white/5 overflow-hidden">
-                    <div className="absolute inset-y-0 left-0 bg-rose-500/10" style={{ width: '45%' }}></div>
-                    <div className="relative px-3 py-1.5 text-xs text-zinc-300 flex justify-between items-center z-10">
-                      <span>DD Melee</span>
-                      <span className="text-white font-medium">23</span>
-                    </div>
+                {loading ? (
+                  <div className="flex items-center justify-center py-4 gap-2">
+                    <Loader2 className="animate-spin text-rose-500" size={16} />
+                    <span className="text-xs text-white/40">Carregando...</span>
                   </div>
-                  <div className="relative bg-white/5 rounded-lg border border-white/5 overflow-hidden">
-                    <div className="absolute inset-y-0 left-0 bg-rose-500/10" style={{ width: '31%' }}></div>
-                    <div className="relative px-3 py-1.5 text-xs text-zinc-300 flex justify-between items-center z-10">
-                      <span>DD Remote Range</span>
-                      <span className="text-white font-medium">16</span>
-                    </div>
+                ) : (
+                  <div className="space-y-2">
+                    {classesList.slice(0, 5).map((item) => (
+                      <div key={item.name} className="relative bg-white/5 rounded-lg border border-white/5 overflow-hidden">
+                        <div
+                          className="absolute inset-y-0 left-0 bg-rose-500/10"
+                          style={{ width: `${(item.count / maxCount) * 100}%` }}
+                        />
+                        <div className="relative px-3 py-1.5 text-xs text-zinc-300 flex justify-between items-center z-10">
+                          <span>{item.name}</span>
+                          <span className="text-white font-medium">{item.count}</span>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                  <div className="relative bg-white/5 rounded-lg border border-white/5 overflow-hidden">
-                    <div className="absolute inset-y-0 left-0 bg-rose-500/10" style={{ width: '18%' }}></div>
-                    <div className="relative px-3 py-1.5 text-xs text-zinc-300 flex justify-between items-center z-10">
-                      <span>Mago Remote Range (Nuker)</span>
-                      <span className="text-white font-medium">9</span>
-                    </div>
-                  </div>
-                  <div className="relative bg-white/5 rounded-lg border border-white/5 overflow-hidden">
-                    <div className="absolute inset-y-0 left-0 bg-rose-500/10" style={{ width: '6%' }}></div>
-                    <div className="relative px-3 py-1.5 text-xs text-zinc-300 flex justify-between items-center z-10">
-                      <span>Suporte</span>
-                      <span className="text-white font-medium">3</span>
-                    </div>
-                  </div>
-                </div>
+                )}
               </div>
             </div>
 
@@ -190,15 +162,23 @@ export default function ServerSection() {
             <div className="bg-[#09090bb3] backdrop-blur-md border border-white/10 rounded-[25px] overflow-hidden shadow-lg flex flex-col h-full max-h-[746px]">
               <div className="px-5 pt-5 pb-3 border-b border-white/10">
                 <h3 className="text-sm font-semibold text-white">Classes na Side</h3>
+                <p className="text-[10px] text-white/30 mt-0.5">Sincronizado com a planilha</p>
               </div>
-              <div className="flex-1 overflow-y-auto px-3 pt-3 pb-1 space-y-1 custom-scrollbar">
-                {classesList.map((item, index) => (
-                  <div key={index} className="flex justify-between items-center px-3 py-3 hover:bg-white/5 rounded-lg transition-colors group">
-                    <span className="text-xs text-zinc-400 group-hover:text-zinc-200 transition-colors">{item.name}</span>
-                    <span className="text-xs font-medium text-white">{item.count}</span>
-                  </div>
-                ))}
-              </div>
+              {loading ? (
+                <div className="flex items-center justify-center py-12 gap-2">
+                  <Loader2 className="animate-spin text-rose-500" size={20} />
+                  <span className="text-sm text-white/40">Carregando...</span>
+                </div>
+              ) : (
+                <div className="flex-1 overflow-y-auto px-3 pt-3 pb-1 space-y-1 custom-scrollbar">
+                  {classesList.map((item) => (
+                    <div key={item.name} className="flex justify-between items-center px-3 py-3 hover:bg-white/5 rounded-lg transition-colors group">
+                      <span className="text-xs text-zinc-400 group-hover:text-zinc-200 transition-colors">{item.name}</span>
+                      <span className="text-xs font-medium text-white">{item.count}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>

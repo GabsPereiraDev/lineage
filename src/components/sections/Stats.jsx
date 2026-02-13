@@ -1,34 +1,40 @@
 import { Users, Shield, Gamepad2, Trophy } from 'lucide-react'
 import SectionTitle from '../ui/SectionTitle'
-
-const stats = [
-  {
-    icon: Users,
-    value: '17+',
-    label: 'Organizadores',
-    description: 'Prontos pra guerra',
-  },
-  {
-    icon: Shield,
-    value: '5K+',
-    label: 'Membros Ativos',
-    description: 'Jogadores dedicados',
-  },
-  {
-    icon: Gamepad2,
-    value: '10+',
-    label: 'Jogos Suportados',
-    description: 'MMOs e mais',
-  },
-  {
-    icon: Trophy,
-    value: '50+',
-    label: 'Eventos',
-    description: 'Realizados com sucesso',
-  },
-]
+import { useSheetsData } from '../../context/SheetsContext'
 
 export default function Stats() {
+  const { cpGroups, members, loading } = useSheetsData()
+
+  const organizadores = loading ? '...' : `${cpGroups.length}+`
+  const totalMembros = loading ? '...' : `${members.length}+`
+
+  const stats = [
+    {
+      icon: Users,
+      value: organizadores,
+      label: 'Organizadores',
+      description: 'Prontos pra guerra',
+    },
+    {
+      icon: Shield,
+      value: totalMembros,
+      label: 'Membros Ativos',
+      description: 'Jogadores dedicados',
+    },
+    {
+      icon: Gamepad2,
+      value: '10+',
+      label: 'Jogos Suportados',
+      description: 'MMOs e mais',
+    },
+    {
+      icon: Trophy,
+      value: '50+',
+      label: 'Eventos',
+      description: 'Realizados com sucesso',
+    },
+  ]
+
   return (
     <section className="py-20 relative">
       {/* Background glow */}
@@ -36,7 +42,7 @@ export default function Stats() {
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
         <SectionTitle subtitle="A maior comunidade de jogadores brasileiros e hispanos">
-          17+ organizadores, <span className="text-amber-400">prontos pra guerra</span>
+          {loading ? '...' : cpGroups.length}+ organizadores, <span className="text-amber-400">prontos pra guerra</span>
         </SectionTitle>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">

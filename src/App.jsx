@@ -13,29 +13,32 @@ import Staff from './components/sections/Staff'
 import Storylines from './components/sections/Storylines'
 import Recruitment from './components/sections/Recruitment'
 import JoinUs from './components/sections/JoinUs'
+import { SheetsProvider } from './context/SheetsContext'
 
 function App() {
   return (
-    <div className="min-h-screen bg-zinc-950 text-white overflow-x-hidden">
-      <Navbar />
+    <SheetsProvider>
+      <div className="min-h-screen bg-zinc-950 text-white overflow-x-hidden">
+        <Navbar />
 
-      <main>
-        <Hero />
-        <Stats />
-        <CPS />
-        <Streamers />
-        <ServerSection />
-        <Warriors />
-        <FeaturedGame />
-        <About />
-        <Staff />
-        {/* <Wiki /> */}
-        <Recruitment />
-        <JoinUs />
-      </main>
+        <main>
+          <Hero />
+          <Stats />
+          <CPS />
+          <Streamers />
+          <ServerSection />
+          <Warriors />
+          <FeaturedGame />
+          <About />
+          <Staff />
+          {/* <Wiki /> */}
+          <Recruitment />
+          <JoinUs />
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </SheetsProvider>
   )
 }
 
