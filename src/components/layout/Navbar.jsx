@@ -10,7 +10,7 @@ const navLinks = [
   { label: 'Streamers', href: '#streamers' },
   { label: 'Servidor', href: '#server' },
   { label: 'Recrutamento', href: '#recruitment' },
-  { label: 'Storyline', href: '#storylines' },
+  { label: 'Storyline', href: '#staff' },
 ]
 
 export default function Navbar() {

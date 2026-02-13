@@ -24,16 +24,18 @@ function App() {
         <main>
           <Hero />
           <Stats />
-          <CPS />
+          <About />
+          <Staff />
+     
           <Streamers />
           <ServerSection />
           <Warriors />
           <FeaturedGame />
-          <About />
-          <Staff />
+         
           {/* <Wiki /> */}
           <Recruitment />
           <JoinUs />
+          <CPS />
         </main>
 
         <Footer />

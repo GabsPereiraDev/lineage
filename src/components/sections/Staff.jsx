@@ -6,10 +6,12 @@ import Coltao from '../../assets/Coltaofoto.jpeg'
 import Gregin from '../../assets/gregin.png'
 
 const staffMembers = [
-  { name: 'LLENN', role: 'Fundador', icon: Crown, color: 'amber', image: Barros },
-  { name: 'Gregin', role: 'Fundador', icon: Crown, color: 'amber', image: Gregin },
+  { name: 'Gregin', role: 'Leader', icon: Crown, color: 'amber', image: Gregin },
+  { name: 'TheColte', role: 'Leader', icon: Crown, color: 'amber', image: Coltao },
+  { name: 'LLENN', role: 'Marketing', icon: Crown, color: 'amber', image: Barros },
+ 
 
-  { name: 'TheColte', role: 'Fundador', icon: Crown, color: 'amber', image: Coltao },
+
 ]
 
 const colorClasses = {
