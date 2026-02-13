@@ -38,7 +38,7 @@ export default function Hero() {
             WarTag
           </span>
           {' '}e jogue com{' '}
-          <span className="text-white/90">Brasileiros e Hispanos</span>
+          <span className="text-white/90">os melhores</span>
         </h1>
 
         {/* Subtitle */}

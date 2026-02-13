@@ -1,10 +1,15 @@
 import SectionTitle from '../ui/SectionTitle'
 import { Crown, Shield } from 'lucide-react'
 
+import Barros from '../../assets/barros.jpeg'
+import Coltao from '../../assets/Coltaofoto.jpeg'
+import Gregin from '../../assets/gregin.png'
+
 const staffMembers = [
-  { name: 'Gregin', role: 'Fundador', icon: Crown, color: 'amber', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80' },
-  { name: 'LLENN', role: 'Co-Fundador', icon: Crown, color: 'amber', image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80' },
-  { name: 'TheColte', role: 'Moderador', icon: Shield, color: 'violet', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80' },
+  { name: 'LLENN', role: 'Fundador', icon: Crown, color: 'amber', image: Barros },
+  { name: 'Gregin', role: 'Fundador', icon: Crown, color: 'amber', image: Gregin },
+
+  { name: 'TheColte', role: 'Fundador', icon: Crown, color: 'amber', image: Coltao },
 ]
 
 const colorClasses = {
